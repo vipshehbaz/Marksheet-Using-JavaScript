@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Sheet</title>
+</head>
+<style>
+    p {
+        display: inline;
+        font-size: 2rem;
+    }
+</style>
+
+<body>
+    <h1>MarkSheet</h1>
+    <p>Urdu :
+    <p id="Urdu"></p>
+    </p>
+    <p style="margin: 0 0 0 40px;" id="resultUrdu"></p><br>
+    <p>English :
+    <p id="English"></p>
+    </p>
+    <p style="margin: 0 0 0 40px;" id="resultEnglish"></p><br>
+    <p>Maths :
+    <p id="Maths"></p>
+    </p>
+    <p style="margin: 0 0 0 40px;" id="resultMaths"></p><br>
+    <p>Obtain Marks :
+    <p id="Omarks"></p>
+    </p><br>
+    <p>Total Marks :
+    <p id="Tmarks"></p>
+    </p><br>
+    <p>Percentage :
+    <p id="Percentage"></p>
+    </p><br>
+    <p>Grade :
+    <p id="Grade"></p>
+    </p><br>
+    <script>
+
+        let urdu = document.getElementById("Urdu")
+        let english = document.getElementById("English")
+        let maths = document.getElementById("Maths")
+        let omarks = document.getElementById("Omarks")
+        let tmarks = document.getElementById("Tmarks")
+        let percerntage = document.getElementById("Percentage")
+        let grade = document.getElementById("Grade")
+        let resultUrdu = document.getElementById("resultUrdu")
+        let resultEnglish = document.getElementById("resultEnglish")
+        let resultMaths = document.getElementById("resultMaths")
+
+        urdu = urdu.innerHTML = 29
+        english = english.innerHTML = 90
+        maths = maths.innerHTML = 90
+        omarks = omarks.innerHTML = urdu + english + maths
+        tmarks = tmarks.innerHTML = 300
+
+        per = percerntage.innerHTML = omarks / tmarks * 100;
+
+        if (per >= 90) {
+            grade.innerHTML = "A+"
+        }
+        else if (per >= 80) {
+            grade.innerHTML = "A"
+        }
+        else if (per >= 70) {
+            grade.innerHTML = "B"
+        }
+        else if (per >= 60) {
+            grade.innerHTML = "C"
+        } else {
+            grade.innerHTML = "Fail"
+        }
+
+        if (urdu <= 29) {
+            resultUrdu.innerHTML = "Fail"
+        }
+        else{
+            resultUrdu.innerHTML = "Pass"
+        }
+        if (english <= 29) {
+            resultEnglish.innerHTML = "Fail"
+        }else{
+            resultEnglish.innerHTML = "Pass"
+        }
+        if (maths <= 29) {
+            resultMaths.innerHTML = "Fail"
+        }
+        else {
+            resultMaths.innerHTML = "Pass"
+        }
+
+    </script>
+</body>
+
+</html>
